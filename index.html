@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualisasi COVID-19 Indonesia per Provinsi</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Visualisasi Interaktif COVID-19 di Indonesia</h1>
+        <p>Eksplorasi bagaimana pandemi berkembang di setiap provinsi dari Maret 2020 hingga September 2022.</p>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="metric-select">Pilih Metrik:</label>
+                <select id="metric-select">
+                    <option value="New Cases" selected>Kasus Baru</option>
+                    <option value="New Deaths">Kematian Baru</option>
+                    <option value="Total Cases">Total Kasus</option>
+                    <option value="Total Deaths">Total Kematian</option>
+                </select>
+            </div>
+            <div class="control-group-slider">
+                <button id="play-pause-button">Play</button>
+                <span id="date-display"></span>
+                <input type="range" id="date-slider" class="slider" min="0" max="100" value="0">
+            </div>
+        </div>
+
+        <div id="context-chart-container">
+            <svg id="context-chart"></svg>
+        </div>
+        <div id="main-chart-container">
+            <svg id="main-chart"></svg>
+        </div>
+        <div class="tooltip" id="tooltip"></div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
